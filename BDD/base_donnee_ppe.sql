@@ -262,6 +262,8 @@ begin
 
 declare x, y, z int;
 
+set new.idEV = ifnull(new.idEV,0);
+
 select max(idEV) into x
 from exterieur;
 if x =0 

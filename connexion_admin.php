@@ -83,17 +83,28 @@
 					$lesLignes = $unControleur->selectALL();
 					//var_dump($lesLignes);
 					include("vue/tableau_evenement.php");
-					include("vue/ajout_evenement.php");
 					
+					include("vue/ajout_evenement.php");
 					if(isset($_POST['ajouter']))
                     {
-						$unControleur->setTable($_POST['uneTable']);	
+						$unControleur->setTable("interieur");	
 						 $tab = array("libelle"=>$_POST['libelle'],"lieu"=>$_POST['lieu'],"dateEV"=>$_POST['dateEV'],"superficie"=>$_POST['superficie']);
 						 $unControleur->insert($tab);
 						 echo "l'événement a bien été ajouté";
                     }
-					include("vue/supprimer_evenement.php");
 					
+					include("vue/ajout_evenement_externe.php");
+					if(isset($_POST['ajouter2']))
+                    {
+						$unControleur->setTable("exterieur");	
+						 $tab = array("libelle"=>$_POST['libelle'],"lieu"=>$_POST['lieu'],"dateEV"=>$_POST['dateEV'],"meteo"=>$_POST['meteo']);
+						 $unControleur->insert($tab);
+						 echo "l'événement a bien été ajouté";
+                    }
+					
+					
+					
+					include("vue/supprimer_evenement.php");
 					if(isset($_POST['supprimer']))
                     {
 						 $tab = array("idEV"=>$_POST['idEV']);
