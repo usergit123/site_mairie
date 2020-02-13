@@ -157,7 +157,7 @@ create table archivePublique as select*from publique where 2=0;
 create table archiveLoisir as select*from loisir where 2=0; 
 create table archivePersonne as select*from personne where 2=0;
 create table archiveBon as select*from bon where 2=0;
-create table archiveExterieurxterieur as select*from exterieur where 2=0;
+create table archiveExterieur as select*from exterieur where 2=0;
 create table archiveInterieur as select*from interieur where 2=0;  
 create table archiveEnfants as select*from enfants where 2=0;
 create table archiveActes as select*from actes where 2=0;
@@ -446,7 +446,7 @@ create trigger publiqueBeforeDelete
 before delete on publique
 for each row 
 begin
-	insert into archiveAsso values (old.idC, old.ville, old.codePostal, old.reduction);
+	insert into archivePublique values (old.idC, old.ville, old.codePostal, old.reduction);
 end //
 
 delimiter ;
@@ -458,7 +458,7 @@ create trigger loisirBeforeDelete
 before delete on loisir
 for each row 
 begin
-	insert into archiveAsso values (old.idL, old.libelle, old.lieu);
+	insert into archiveLoisir values (old.idL, old.libelle, old.lieu);
 end //
 
 delimiter ;
@@ -470,7 +470,7 @@ create trigger personneBeforeDelete
 before delete on personne
 for each row 
 begin
-	insert into archiveAsso values (old.idP, old.pseudo, old.mdp, old.nom, old.prenom, old.adresse, old.tel, old.tel, old.cp, old.email, old.datenaiss, old.sexe, old.fonction);
+	insert into archivePersonne values (old.idP, old.pseudo, old.mdp, old.nom, old.prenom, old.adresse, old.tel, old.tel, old.cp, old.email, old.datenaiss, old.sexe, old.fonction);
 end //
 
 delimiter ;
@@ -482,7 +482,7 @@ create trigger bonBeforeDelete
 before delete on bon
 for each row 
 begin
-	insert into archiveAsso values (old.idB);
+	insert into archiveBon values (old.idB);
 end //
 
 delimiter ;
@@ -494,7 +494,7 @@ create trigger interieurBeforeDelete
 before delete on interieur
 for each row 
 begin
-	insert into archiveAsso values (old.idEV, old.lieu, old.libelle, old.dateEV, old.superficie);
+	insert into archiveInterieur values (old.idEV, old.lieu, old.libelle, old.dateEV, old.superficie);
 end //
 
 delimiter ;
@@ -506,7 +506,7 @@ create trigger exterieurBeforeDelete
 before delete on exterieur
 for each row 
 begin
-	insert into archiveAsso values (old.idEV, old.lieu, old.libelle, old.dateEV, old.meteo);
+	insert into archiveExterieur values (old.idEV, old.lieu, old.libelle, old.dateEV, old.meteo);
 end //
 
 delimiter ;
@@ -530,7 +530,7 @@ create trigger enfantsBeforeDelete
 before delete on enfants
 for each row 
 begin
-	insert into archiveAsso values (old.idE, old.idP, old.idC, old.nomE, old.prenomE, old.sexe);
+	insert into archiveEnfants values (old.idE, old.idP, old.idC, old.nomE, old.prenomE, old.sexe);
 end //
 
 delimiter ;
@@ -542,7 +542,7 @@ create trigger actesBeforeDelete
 before delete on actes
 for each row 
 begin
-	insert into archiveAsso values (old.idF, old.idP, old.mariage, old.naissance, old.deces);
+	insert into archiveActes values (old.idF, old.idP, old.mariage, old.naissance, old.deces);
 end //
 
 delimiter ;
@@ -554,7 +554,7 @@ create trigger participerBeforeDelete
 before delete on participer
 for each row 
 begin
-	insert into archiveAsso values (old.idL, old.idP, old.datePL);
+	insert into archiveParticiper values (old.idL, old.idP, old.datePL);
 end //
 
 delimiter ;
@@ -566,7 +566,7 @@ create trigger inscriptionBeforeDelete
 before delete on inscription
 for each row 
 begin
-	insert into archiveAsso values (old.idA, old.idP, old.dateIns, old.montant);
+	insert into archiveInscription values (old.idA, old.idP, old.dateIns, old.montant);
 end //
 
 delimiter ;
@@ -578,7 +578,7 @@ create trigger assisterBeforeDelete
 before delete on assister
 for each row 
 begin
-	insert into archiveAsso values (old.idP, old.idEV, old.dateEV);
+	insert into archiveAssister values (old.idP, old.idEV, old.dateEV);
 end //
 
 delimiter ;
@@ -590,7 +590,7 @@ create trigger mariageBeforeDelete
 before delete on mariage
 for each row 
 begin
-	insert into archiveAsso values (old.idP1, old.idP2, old.dateMariage, old.datedivorce);
+	insert into archiveMariage values (old.idP1, old.idP2, old.dateMariage, old.datedivorce);
 end //
 
 delimiter ;
