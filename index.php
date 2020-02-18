@@ -8,14 +8,6 @@
 	<head>
 		<?php
 			include("vue/head_presentation.php");
-			
-			if (isset($_GET['page']))
-			{
-				if ($_GET['page']==10) 
-				{ 
-					header('Location: index.php'); //Header => Pour rafraîchir la page
-				} 
-			}
 		?>
 	</head>
 	
@@ -23,6 +15,14 @@
 
 	<?php
 	include("vue/presentation.php");
+	
+	if (isset($_GET['page']))
+			{
+				if ($_GET['page']==10) 
+				{ 
+					header('Location: index.php'); //Header => Pour rafraîchir la page
+				} 
+			}
 	
 	if($_SESSION==null)
 	{
