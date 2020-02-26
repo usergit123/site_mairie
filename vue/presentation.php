@@ -1,7 +1,7 @@
 <br>
  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 				<div class="container">
-						<a class="navbar-brand text-blue" href="index.php"> Bienvenue dans votre mairie</a>
+						<a class="navbar-brand text-blue" href="index.php"> TEST GITHUB Bienvenue dans votre mairie</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 								<span class="navbar-toggler-icon"></span>
 						</button>
