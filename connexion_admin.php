@@ -13,9 +13,17 @@
 				if (isset($_GET['page']))
 				{
     				if ($_GET['page']==10) 
-    				{ 
-        				header('Location: connexion_admin.php'); //Header => Pour rafraîchir la page
-    				} 
+    					header('Location: connexion_admin.php'); //Header => Pour rafraîchir la page
+    				else
+    				{
+    					if( $_GET['page']==2  && (isset($_POST['ajouter']) || isset($_POST['supprimer']))  )
+    						header('Location: connexion_admin.php?page=2');
+    					else
+    					{
+    						if( $_GET['page']==3  && (isset($_POST['ajouter']) || isset($_POST['supprimer']))  )
+    							header('Location: connexion_admin.php?page=3');
+    					}
+    				}
 				}
 		?>
 	</head>
