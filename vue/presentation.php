@@ -1,7 +1,7 @@
 <br>
  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 				<div class="container">
-						<a class="navbar-brand text-blue" href="index.php"> Bienvenue dans votre mairie</a>
+						<a class="navbar-brand text-blue" href="index.php">Bienvenue dans votre mairie</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 								<span class="navbar-toggler-icon"></span>
 						</button>
@@ -11,7 +11,7 @@
 
 										<li class="nav-item dropdown">
 												<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-												 <i class="fa fa-gamepad"></i> Espace personnel
+												 <i class="fa fa-file"></i> Espace personnel
 												</a>
 												<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
 													<a class="dropdown-item" href="index.php?page=6"> Voir les actes</a>
@@ -21,7 +21,7 @@
 
 												<li class="nav-item dropdown">
 														<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-														 <i class="fa fa-eur"></i> Lieu
+														 <i class="fa fa-bus"></i> Lieu
 														</a>
 														<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
 															<a class="dropdown-item" href="index.php?page=1"> Voir les cantines</a>
