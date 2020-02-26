@@ -81,9 +81,7 @@
 						break;
 					
 					case 3:
-						$unControleur->setTable("evenement");
-						$lesLignes = $unControleur->selectALL();
-						//var_dump($lesLignes);
+						
 						include("vue/tableau_evenement.php");
 						
 						include("vue/ajout_evenement.php");
