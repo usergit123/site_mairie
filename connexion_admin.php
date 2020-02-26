@@ -18,9 +18,10 @@
     				} 
 				}
 		?>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
 	</head>
 	<body>
-		<center>
+		
 			<h1> SITE DE LA MAIRIE </h1>
 		    <form method ="post" action ="">
 		    Pseudo : <input type ="text" name="pseudo"> </br> 
@@ -28,6 +29,7 @@
 		    <input type ="reset" name ="Annuler" value ="Annuler">
 		    <input type ="submit" name ="SeConnecter" value ="SeConnecter"><br/>
 		    </form>
+			<center>
 		    <a href="inscription.php"> Inscrivez-vous ici </a>
 			</center>
 			<?php
