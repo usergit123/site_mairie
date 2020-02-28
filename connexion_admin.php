@@ -61,7 +61,6 @@
 						$unControleur->setTable("loisir");
 						$lesLignes = $unControleur->selectALL();
 						//var_dump($lesLignes);
-						include("vue/tableau_loisir.php");
 						include("vue/ajout_loisir.php");
 						 
 						if(isset($_POST['ajouter']))
@@ -76,13 +75,13 @@
 							 $tab = array("idL"=>$_POST['idL']);
 							 $unControleur->delete($tab);
 						}
+						include("vue/tableau_loisir.php");
 						
 						
 						break;
 					
 					case 3:
 						
-						include("vue/tableau_evenement.php");
 						
 						include("vue/ajout_evenement.php");
 						if(isset($_POST['ajouter']))
@@ -106,6 +105,7 @@
 							 $tab = array("idEV"=>$_POST['idEV']);
 							 $unControleur->delete($tab);
 						}
+						include("vue/tableau_evenement.php");
 						break;
 					
 					case 4:
