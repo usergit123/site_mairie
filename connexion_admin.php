@@ -135,6 +135,8 @@
 					case 8:
 						$unControleur->setTable("vstat");
 						$lesLignes = $unControleur->selectALL();
+						$unControleur->setTable("vassister");
+						$lesLignes2 = $unControleur->selectALL();
 						include ("vue/tableau_stat.php");
 						break;
 					
