@@ -1,4 +1,5 @@
 					
+					<center>
 					<h3> Voici les associations </h3>
 					<table border=1>
 					<tr><td> libelleA </td>
@@ -17,5 +18,7 @@
 					}
 					?>
 					</table>
+					</center>
+					
 					</br>
 					</br>

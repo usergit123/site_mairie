@@ -1,5 +1,5 @@
 
-
+<center>
 <h3> Voici les cantines </h3>
 
 <div class="table-responsive" id="sailorTableArea">
@@ -26,6 +26,7 @@
 									</tbody>
 									</table>
 									</div>
+									</center>
 									</br>
 									</br>
 									

@@ -1,5 +1,5 @@
-					
 					<h1> Voici les actes </h1>
+					<center>
 					<table border=1>
 					<tr><td> id acte </td>
 					 <td> id personne </td>
@@ -18,5 +18,7 @@
 					}
 					?>
 				</table>
+				</center>
+				
 				</br>
 				</br>
