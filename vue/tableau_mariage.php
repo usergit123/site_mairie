@@ -1,21 +1,21 @@
-					
+					<center>
 					<h2> Voici les mariages </h2> 
 					
 					<table border=1>
-					<tr><td> nom 1er marié(é) </td>
-					 <td> prenom 1er marié(é)</td>
-					 <td> nom 2ème marié(é) </td>
-					 <td> prenom 2ème marié(é) </td>
+					<tr><td> 1er marié(e) </td>
+					 <td> 2ème marié(e)</td>
+					 
 					 <?php
 					foreach ($lesLignes as $uneLigne)
 					{
-						echo "<tr> <td>".$uneLigne['a']." </td>
-						<td> ".$uneLigne['b']." </td>
-						<td>".$uneLigne['c']." </td>
-						<td>".$uneLigne['d']." </td>
-						</tr>";
+						echo "<tr> 
+								<td>".$uneLigne['a']." </td>
+								<td> ".$uneLigne['b']." </td>
+							</tr>";
 					}
 					?>
 					</table>
+					</center>
+					
 					</br>
 					</br>

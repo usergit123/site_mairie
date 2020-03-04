@@ -26,9 +26,10 @@
     				}
 				}
 		?>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
 	</head>
 	<body>
-		<center>
+		
 			<h1> SITE DE LA MAIRIE </h1>
 		    <form method ="post" action ="">
 		    Pseudo : <input type ="text" name="pseudo"> </br> 
@@ -36,6 +37,7 @@
 		    <input type ="reset" name ="Annuler" value ="Annuler">
 		    <input type ="submit" name ="SeConnecter" value ="SeConnecter"><br/>
 		    </form>
+			<center>
 		    <a href="inscription.php"> Inscrivez-vous ici </a>
 			</center>
 			<?php
@@ -67,7 +69,6 @@
 						$unControleur->setTable("loisir");
 						$lesLignes = $unControleur->selectALL();
 						//var_dump($lesLignes);
-						include("vue/tableau_loisir.php");
 						include("vue/ajout_loisir.php");
 						 
 						if(isset($_POST['ajouter']))
@@ -82,15 +83,13 @@
 							 $tab = array("idL"=>$_POST['idL']);
 							 $unControleur->delete($tab);
 						}
+						include("vue/tableau_loisir.php");
 						
 						
 						break;
 					
 					case 3:
-						$unControleur->setTable("evenement");
-						$lesLignes = $unControleur->selectALL();
-						//var_dump($lesLignes);
-						include("vue/tableau_evenement.php");
+						
 						
 						include("vue/ajout_evenement.php");
 						if(isset($_POST['ajouter']))
@@ -114,6 +113,7 @@
 							 $tab = array("idEV"=>$_POST['idEV']);
 							 $unControleur->delete($tab);
 						}
+						include("vue/tableau_evenement.php");
 						break;
 					
 					case 4:
@@ -143,6 +143,8 @@
 					case 8:
 						$unControleur->setTable("vstat");
 						$lesLignes = $unControleur->selectALL();
+						$unControleur->setTable("vassister");
+						$lesLignes2 = $unControleur->selectALL();
 						include ("vue/tableau_stat.php");
 						break;
 					

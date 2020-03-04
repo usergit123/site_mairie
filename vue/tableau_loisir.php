@@ -1,5 +1,5 @@
 
-					
+					<center>
 					<h3> Voici les loisirs </h3>
 					<table border=1>
 					<tr><td>Id Loisir </td> <td>Libelle</td>
@@ -21,5 +21,6 @@
 					?>
 					
 					</table>
+					</center>
 					</br>
 					</br>

@@ -151,6 +151,11 @@ as select lieu, count(idEV)
 from evenement
 group by lieu;
 
+create view Vassister (libelle, nbAssistants)
+as select e.libelle, count(a.idP)
+from evenement e, assister a
+where e.idEV=a.idEV
+group by e.libelle;
 
 create table archivePrivee as select*from privee where 2=0; 
 create table archivePublique as select*from publique where 2=0; 
@@ -174,7 +179,10 @@ INSERT INTO personne (idP,pseudo,mdp,nom,prenom,adresse,Tel,cp,email,datenaiss,s
 VALUES (null,"kev", 123,"Henry","Kevin", "28 rue delacarte","0102030405",75000,"kevin@henry.fr","1996/01/04","homme","PDG"),
 	   (null,"aud", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave");
 
-
+insert into assister values
+(1,1,"2021/02/02"),
+(1,2,"2021/03/03"),
+(2,1,"2021/02/02");
 
 insert into loisir 
 values(null,"libelle","lieu"),
