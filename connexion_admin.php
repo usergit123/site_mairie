@@ -110,6 +110,7 @@
 						include("vue/supprimer_evenement.php");
 						if(isset($_POST['supprimer']))
 						{
+							$unControleur->setTable("evenement");
 							 $tab = array("idEV"=>$_POST['idEV']);
 							 $unControleur->delete($tab);
 						}
