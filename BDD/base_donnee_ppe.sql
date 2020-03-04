@@ -356,6 +356,25 @@ end //
 
 delimiter ;
 
+drop trigger if exists priveeBeforeUpdate;
+delimiter //
+
+create trigger priveeBeforeUpdate
+before update on privee
+for each row
+begin
+
+	update cantine
+	set ville = ifnull(new.ville, ville),
+		codePostal = ifnull(new.codePostal, codePostal),
+		prix = ifnull(new.prix, prix)
+	where idC = new.idC;
+	
+end //
+
+delimiter ;
+
+
 /* publique */
 
 drop trigger if exists publiqueBeforeInsert;
@@ -399,6 +418,26 @@ begin
 	delete from publique where idC = old.idC;
 
 end //
+delimiter ;
+
+
+
+drop trigger if exists publiqueBeforeUpdate;
+delimiter //
+
+create trigger publiqueBeforeUpdate
+before update on publique
+for each row
+begin
+
+	update cantine
+	set ville = ifnull(new.ville, ville),
+		codePostal = ifnull(new.codePostal, codePostal),
+		prix = ifnull(new.prix, prix)
+	where idC = new.idC;
+	
+end //
+
 delimiter ;
 
 

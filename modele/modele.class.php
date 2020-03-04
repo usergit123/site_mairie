@@ -148,7 +148,7 @@
 			
 			if ($this->pdo !=null) //appel de la fonction conn
 			{
-				$requete = "select concat(p1.nom,' ',p1.prenom) a, concat(p2.nom,' ',p2.prenom) b
+				$requete = "select concat(p1.nom,' ',p1.prenom) a, concat(p2.nom,' ',p2.prenom) b, dateMariage
 					from personne p1, personne p2, mariage m
 					where p1.idP=m.idP1 and p2.idP=m.idP2;";
 				//preparation de la requete

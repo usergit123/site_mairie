@@ -23,7 +23,11 @@
 					
 					</table>
 </td>
+
+
 <td width="100px"></td>
+
+
 <td style="vertical-align:top;">
 <?php
 	$unControleur->setTable("exterieur");

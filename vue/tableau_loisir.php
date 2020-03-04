@@ -1,9 +1,9 @@
 
 					<center>
 					<h3> Voici les loisirs </h3>
-					<table border=1>
-					<tr><td>Id Loisir </td> <td>Libelle</td>
-					<td> Lieu</td> </tr>
+					<table class="unTypeDeTableau">
+					<tr><th>Id Loisir </th> <th>Libelle</th>
+					<th> Lieu</th> </tr>
 					
 					
 					<?php
@@ -24,3 +24,16 @@
 					</center>
 					</br>
 					</br>
+					
+					
+<style>
+.unTypeDeTableau {
+  width:400px;
+  border-collapse: separate;
+  border-spacing: 0px;
+  border: 1px solid red;
+}
+.unTypeDeTableau th, .unTypeDeTableau td {
+  border: 1px solid red;
+}
+</style>

@@ -1,4 +1,6 @@
- <table border=1>
+					<center>
+					<h3>Voici les enfants<h3>
+					<table border=1>
 					<tr><td> id enfant </td>
 					 <td> id parents </td>
 					 <td> id cantine </td>
@@ -18,5 +20,7 @@
 					}
 					?>
 				</table>
+				</center>
+				
 				</br>
 				</br>
