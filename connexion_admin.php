@@ -59,7 +59,7 @@
   <?php
   if (isset($_SESSION['numA']))
   {
-	  include("C:/wamp64/www/CSS/Pratt/vue/nav_connexion_admin.php");
+	  include("vue/nav_connexion_admin.php");
   }
   ?>
           
@@ -81,7 +81,7 @@
 	
 	include("vue/con_admin.php");
 	
-	echo $_SESSION['numA']."<br><br><br>";
+	//echo $_SESSION['numA']."<br><br><br>";
 	
 	if (isset($_SESSION['numA']))
 		{
