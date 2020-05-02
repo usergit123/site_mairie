@@ -1,6 +1,19 @@
 <?php
 	$unControleur->setTable("interieur");
 	$lesLignes = $unControleur->selectALL();
+	if(isset($_POST['valider']))
+	{
+		//$recherche = $_POST['recherche'];
+		
+		echo $_POST['recherche'];
+		
+		$champs = array("*"); 
+		//var_dump($champs);
+		$where = array("idEV"=>$_POST['recherche'],"lieu"=>$_POST['recherche'],"libelle"=>$_POST['recherche'],
+		"dateEV"=>$_POST['recherche'],"superficie"=>$_POST['recherche']); 
+		$operateur = " or "; 					
+		$lesLignes = $unControleur->selectWhere($champs,$where,$operateur);
+	}
 	
 ?>
 <center>
@@ -32,6 +45,17 @@
 <?php
 	$unControleur->setTable("exterieur");
 	$lesLignes = $unControleur->selectALL();
+	if(isset($_POST['valider']))
+	{
+		//$recherche = $_POST['recherche'];
+		
+		$champs = array("*"); 
+		//var_dump($champs);
+		$where = array("idEV"=>$_POST['recherche'],"lieu"=>$_POST['recherche'],"libelle"=>$_POST['recherche'],
+		"dateEV"=>$_POST['recherche'],"meteo"=>$_POST['recherche']); 
+		$operateur = " or "; 					
+		$lesLignes = $unControleur->selectWhere($champs,$where,$operateur);
+	}
 ?>
 
 <table border=1>

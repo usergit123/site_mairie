@@ -30,10 +30,11 @@ if (isset($_POST['SeConnecter']))
 						$_SESSION['nom']=$uneLigne['nom'];
 						$_SESSION['prenom']=$uneLigne['prenom'];
 						$_SESSION['idP']=$uneLigne['idP'];
-						$int='prenom';
+						//$int='prenom';
 						//echo strlen((string)$int); 
 					}
 				
+					header('Location: index.php?first=1');
 			}
 		}
 ?>

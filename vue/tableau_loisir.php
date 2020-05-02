@@ -7,17 +7,17 @@
 					
 					
 					<?php
-
+						$num=0;
 						foreach ($lesLignes as $uneLigne)
 						{
-							
+							$num++;
 							echo "<tr> <td>".$uneLigne['idL']."</td>
 							<td>".$uneLigne['libelle']."</td>
-							<td>".$uneLigne['lieu']."</td><td><a href='inscriptionLoisir.php'> s'inscrire </a></td><tr>";
+							<td>".$uneLigne['lieu']."</td><td><a href='index.php?page=2&num=".$num."'> s'inscrire </a></td><tr>";
 							 
 						}
 						echo "</table>";
-						echo "</br></br><a href='inscriptionLoisir.php'> s'inscrire à une activité </a>";
+						//echo "</br></br><a href='inscriptionLoisir.php'> s'inscrire à une activité </a>";
 					?>
 					
 					</table>

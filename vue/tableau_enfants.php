@@ -1,5 +1,5 @@
 					<center>
-					<h3>Voici les enfants<h3>
+					<h3>Vous avez:<h3>
 					<table border=1>
 					<tr><td> id enfant </td>
 					 <td> id parents </td>
