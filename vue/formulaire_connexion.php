@@ -1,7 +1,16 @@
 <h1> SITE DE LA MAIRIE </h1>
     <form method ="post" action ="">
-    Pseudo : <input type ="text" name="pseudo"> </br> 
-    MDP : <input type ="password" name="mdp"> </br> 
+    
+	<!-- <label for="pseudo">-->
+	Pseudo : 
+	<!--</label>-->
+	<input type ="text" name="pseudo" id="pseudo"> </br> 
+	
+    <!--<label for="mdp"> -->
+	MDP : 
+	<!--</label>-->
+	<input type ="password" name="mdp"id="mdp"> </br> 
+	
     <input type ="reset" name ="Annuler" value ="Annuler">
     <input type ="submit" name ="SeConnecter" value ="SeConnecter"><br/>
     </form>

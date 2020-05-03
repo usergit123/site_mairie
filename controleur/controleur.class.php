@@ -27,6 +27,14 @@
             //le role du controleur 
             $this->unModele->insert ($tab);
         }
+		
+		public function insert_participer ($tab)
+        {
+            //on peut controler les donnees avant insertion
+            //le role du controleur 
+            $this->unModele->insert_participer ($tab);
+        }
+		
         public function delete ($tabId)
         {
             $this->unModele->delete ($tabId);
@@ -46,6 +54,11 @@
 		public function selectUser ($pseudo,$mdp)
 		{
 			return $this->unModele->selectUser($pseudo,$mdp);
+		}
+		
+		public function verif_pseudo ($login)
+		{
+			return $this->unModele->verif_pseudo($login);
 		}
 		
     }

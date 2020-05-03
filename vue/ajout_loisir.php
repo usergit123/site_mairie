@@ -1,9 +1,22 @@
-<h1> Ajouter un loisir </h1>
-					<form id ="unId" method ="post" action ="">
-					<tr>Nom du loisir : <input type='text' name='libelle'> </tr>
-					<tr>Lieu du loisir: <input type='text' name='lieu'> </tr>
-					<input type ="reset" name ="Annuler" value ="Annuler">
-					<input type ="submit" name ="ajouter" value ="ajouter"><br/>
-					</form>
+		<h1> Ajouter un loisir </h1> </br>
+                    <form method ="post" action ="">
 					
-					<script src="scripts/main.js"></script>
+						
+					
+					
+						<label for="libelle">Nom du loisir </label><input type='text' name='libelle' id="libelle"> </br>
+					
+					
+						<label for="lieu">Lieu </label><input type='text' name='lieu' id="lieu"> </br>
+					
+										
+						
+					
+					
+					
+                    <input type ="reset" name ="Annuler" value ="Annuler">
+                    <input type ="submit" name ="Ajouter" value ="Ajouter"><br/>
+                    </form>
+					</br></br>
+					
+					

@@ -8,6 +8,7 @@
 					<tr>Météo <input type='text' name='meteo'> </tr>
 					
                     <input type ="reset" name ="Annuler" value ="Annuler">
-                    <input type ="submit" name ="ajouter2" value ="ajouter"><br/>
+                    <input type ="submit" name ="ajouter2" value ="Ajouter"><br/>
                     </form>
 					</center>
+					</br>

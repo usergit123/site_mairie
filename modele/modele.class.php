@@ -54,6 +54,7 @@
 			{
 				$tabWhere[] = $cle."= :".$cle;
 				$donnees[":".$cle] = $valeur;
+				echo $valeur;
 			}
 			
 			$chaineWhere = implode ($operateur, $tabWhere);
@@ -90,10 +91,11 @@
 				{
 					$tabValues[] = ":".$cle;
 					$donnees[":".$cle] = $valeur;
+					echo $valeur;
 				}
 				$chaineTab = implode (", ", $tabValues);
 				
-				$requete = "insert into ".$this->table." value (null, ".$chaineTab.");";
+				$requete = "insert into ".$this->table." values (null, ".$chaineTab.");";
 				
 				echo $requete;
 				
@@ -102,6 +104,32 @@
 				$select->execute ($donnees);
 			}
 		}
+		
+		public function insert_participer ($tab)
+		{
+			//var_dump($tab);
+			if ($this->pdo !=null) //appel de la fonction connexion
+			{
+				$donnees = array();
+				$tabValues = array();
+				foreach ($tab as $cle=>$valeur)
+				{
+					$tabValues[] = ":".$cle;
+					$donnees[":".$cle] = $valeur;
+				}
+				$chaineTab = implode (", ", $tabValues);
+				
+				$requete = "insert into ".$this->table." value (".$tab['idL'].",".$tab['idP'].",".$tab['datePL'].");";
+				
+				//echo $requete;
+				
+				$select = $this->pdo->prepare ($requete);
+				//execution de la requete
+				$select->execute ($donnees);
+				//var_dump($donnees);
+			}
+		}
+		
 		public function delete($tabId)
 		{
 			if($this->pdo !=null)
@@ -128,7 +156,7 @@
 			
 			if ($this->pdo !=null) //appel de la fonction conn
 			{
-				$requete = "select p1.nom a,p1.prenom b,p2.nom c,p2.prenom d
+				$requete = "select concat(p1.nom,' ',p1.prenom) a, concat(p2.nom,' ',p2.prenom) b, dateMariage
 				from personne p1, personne p2, mariage m
 				where p1.idP=m.idP1 and p2.idP=m.idP2 and p1.idP=".$idP.";";
 				//preparation de la requete
@@ -148,7 +176,7 @@
 			
 			if ($this->pdo !=null) //appel de la fonction conn
 			{
-				$requete = "select p1.nom a,p1.prenom b,p2.nom c,p2.prenom d
+				$requete = "select concat(p1.nom,' ',p1.prenom) a, concat(p2.nom,' ',p2.prenom) b, dateMariage
 					from personne p1, personne p2, mariage m
 					where p1.idP=m.idP1 and p2.idP=m.idP2;";
 				//preparation de la requete
@@ -178,6 +206,27 @@
 			}
 			else
 			{
+				return null;
+			}
+		}
+		
+		public function verif_pseudo ($login)
+		{
+			if ($this->pdo !=null)
+			{
+				$requete="SELECT pseudo FROM personne WHERE pseudo = '".$login."'; ";
+				
+				
+				
+				//preparation de la requete
+				$select = $this->pdo->prepare ($requete);
+				//execution de la requete
+				$select->execute ();
+				//extraction des enregistrements
+				return $select->fetchALL();
+			}
+			else
+			{	
 				return null;
 			}
 		}

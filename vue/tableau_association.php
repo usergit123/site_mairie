@@ -1,11 +1,19 @@
 					
+					<center>
 					<h3> Voici les associations </h3>
-					<table border=1>
-					<tr><td> libelleA </td>
-					 <td> adresse </td> 
-					 <td> tel </td>
-					 <td> codeP </td> 
-
+					
+					<div class="table-responsive" id="sailorTableArea">
+<table id="sailorTable" class="table table-striped table-bordered" width="25%">
+					
+<thead>					
+			<tr>	
+					 <th> Nom </th>
+					 <th> adresse </th> 
+					 <th> tel </th>
+					 <th> code postal </th> 
+			</tr>
+</thead>
+<tbody>
 					 <?php
 					foreach ($lesLignes as $uneLigne)
 					{
@@ -16,6 +24,9 @@
 						</tr>";
 					}
 					?>
+</tbody>
 					</table>
+					</center>
+					
 					</br>
 					</br>

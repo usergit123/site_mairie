@@ -14,6 +14,7 @@ primary key(idC)
 	ville varchar(50),
 	codePostal char(5),
 	prix float,
+	bourse varchar(50),
 	primary key(idC)
 	);
 	create table publique
@@ -151,6 +152,11 @@ as select lieu, count(idEV)
 from evenement
 group by lieu;
 
+create view Vassister (libelle, nbAssistants)
+as select e.libelle, count(a.idP)
+from evenement e, assister a
+where e.idEV=a.idEV
+group by e.libelle;
 
 create table archivePrivee as select*from privee where 2=0; 
 create table archivePublique as select*from publique where 2=0; 
@@ -174,7 +180,10 @@ INSERT INTO personne (idP,pseudo,mdp,nom,prenom,adresse,Tel,cp,email,datenaiss,s
 VALUES (null,"kev", 123,"Henry","Kevin", "28 rue delacarte","0102030405",75000,"kevin@henry.fr","1996/01/04","homme","PDG"),
 	   (null,"aud", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave");
 
-
+insert into assister values
+(1,1,"2021/02/02"),
+(1,2,"2021/03/03"),
+(2,1,"2021/02/02");
 
 insert into loisir 
 values(null,"libelle","lieu"),
@@ -186,7 +195,10 @@ insert into mariage(idP1,idP2,dateMariage,datedivorce) values (1,2,'2018/09/01',
 	insert into interieur(idEV, lieu, libelle, dateEV, superficie) values (null, 'Bamaco', 'feteInterieur', '2008/03/05', 100);
 	insert into exterieur(idEV, lieu, libelle, dateEV, meteo) values (null, 'defense', 'fete', '2007/02/04', "beau");*/
 
-insert into association (idA,libelleA,adresse,tel,codeP, dateA) values (null, 'association1', 'adresse association', 0102030405, 75000, '2008/05/06');
+insert into association (idA,libelleA,adresse,tel,codeP, dateA) values 
+(null, 'association1', 'adresse association', 0102030405, 75000, '2008/05/06'),
+(null, 'association2', 'adresse 2', 0102030405, 75000, '2008/05/06'),
+(null, 'une association', 'rue saint nicolas', 0102030405, 75000, '2008/05/06');
 
 insert into actes (idF, idP, mariage, naissance, deces) values (null, 1, '2018/09/01','1997/01/04',null);
 
@@ -222,7 +234,7 @@ begin
 
 declare x, y, z int;
 
-set new.idEV = ifnull(new.idEV,0);
+set new.idEV = ifnull(new.idEV,1);
 
 select max(idEV) into x
 from interieur;
@@ -262,7 +274,7 @@ begin
 
 declare x, y, z int;
 
-set new.idEV = ifnull(new.idEV,0);
+set new.idEV = ifnull(new.idEV,1);
 
 select max(idEV) into x
 from exterieur;
@@ -310,10 +322,10 @@ delimiter ;
 
 
 insert into interieur values 
-(0,'bowling', 'bonneuil', '1996-12-12', 10),
-(0,'jouer','nice', '1997-11-11', 20 );
+(null,'bowling', 'bonneuil', '1996-12-12', 10),
+(null,'jouer','nice', '1997-11-11', 20 );
 insert into exterieur values
-(0, 'cinema', 'jura', '1998-10-10', 'bonne');
+(null, 'cinema', 'jura', '1998-10-10', 'bonne');
 
 
 
@@ -347,6 +359,25 @@ end if ;
 end //
 
 delimiter ;
+
+drop trigger if exists priveeBeforeUpdate;
+delimiter //
+
+create trigger priveeBeforeUpdate
+before update on privee
+for each row
+begin
+
+	update cantine
+	set ville = ifnull(new.ville, ville),
+		codePostal = ifnull(new.codePostal, codePostal),
+		prix = ifnull(new.prix, prix)
+	where idC = new.idC;
+	
+end //
+
+delimiter ;
+
 
 /* publique */
 
@@ -394,12 +425,32 @@ end //
 delimiter ;
 
 
+
+drop trigger if exists publiqueBeforeUpdate;
+delimiter //
+
+create trigger publiqueBeforeUpdate
+before update on publique
+for each row
+begin
+
+	update cantine
+	set ville = ifnull(new.ville, ville),
+		codePostal = ifnull(new.codePostal, codePostal),
+		prix = ifnull(new.prix, prix)
+	where idC = new.idC;
+	
+end //
+
+delimiter ;
+
+
 /* fin de l'héritage sur cantine */
 
 
 insert into privee values 
-(0, 'quincy', 80200, 17),
-(0, 'brunoy', 91500, 20);
+(0, 'quincy', 80200, 17, "Oui"),
+(0, 'brunoy', 91500, 20, "Non");
 insert into publique values
 (0, 'montgeron', 77300, 30, 20);
 
