@@ -18,6 +18,7 @@ if (isset($_POST['SeConnecter']))
 			
 			
 			
+			
 			//var_dump($resultat);
 			if($resultat==null)
 			{
