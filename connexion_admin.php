@@ -88,13 +88,48 @@
 				switch ($page)
 				{
 					case 1 :
-						$unControleur->setTable("cantine");
-						$lesLignes = $unControleur->selectALL();
-						//var_dump($lesLignes);
-						include("vue/tableau_cantine.php");
+							echo "
+						<table>
+							<tr>
+								<td style='vertical-align:top;'>";
+								include('vue/ajout_cantine.php');
+								
+								echo
+								"</td> <td width='100px'>
+								
+								<td style='vertical-align:top;'>";
+								include('vue/supprimer_cantine.php');
+								echo "</td>
+							</tr>
+						</table>";
 						
+						
+						
+						
+						if(isset($_POST['Ajouter']))
+						{
+							$unControleur->setTable($_POST["uneTable"]);	
+							if ($_POST["uneTable"] == "publique")
+							{
+								$tab = array("ville"=>$_POST['ville'],"codePostal"=>$_POST['codePostal'],"prix"=>$_POST['prix'],"reduction"=>$_POST['reduction']);	
+							}
+							else
+							{
+								$tab = array("ville"=>$_POST['ville'],"codePostal"=>$_POST['codePostal'],"prix"=>$_POST['prix'],"bourse"=>$_POST['bourse']);
+							}
+							 $unControleur->insert($tab);
+							 echo "La cantine a bien été ajouté";
+						}
+										
+										
+						if(isset($_POST['supprimer']))
+						{
+							$unControleur->setTable("cantine");
+							 $tab = array("idC"=>$_POST['idC']);
+							 $unControleur->delete($tab);
+						}
+						include("vue/tableau_cantine.php");
 						break;
-					
 					case 2:
 						$unControleur->setTable("loisir");
 						$lesLignes = $unControleur->selectALL();

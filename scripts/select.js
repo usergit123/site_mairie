@@ -7,3 +7,4 @@ function THEFUNCTION(i) {
 			default: divSuperficie.style.display = 'none'; divMeteo.style.display = 'none'; break;
 		}
 	}
+

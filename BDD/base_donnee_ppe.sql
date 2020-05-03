@@ -14,6 +14,7 @@ primary key(idC)
 	ville varchar(50),
 	codePostal char(5),
 	prix float,
+	bourse varchar(50),
 	primary key(idC)
 	);
 	create table publique
@@ -448,8 +449,8 @@ delimiter ;
 
 
 insert into privee values 
-(0, 'quincy', 80200, 17),
-(0, 'brunoy', 91500, 20);
+(0, 'quincy', 80200, 17, "Oui"),
+(0, 'brunoy', 91500, 20, "Non");
 insert into publique values
 (0, 'montgeron', 77300, 30, 20);
 

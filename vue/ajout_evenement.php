@@ -4,20 +4,20 @@
 					<h1> Ajouter un événement </h1> </br>
                     <form method ="post" action ="">
 					
-						<label for="lieu">Lieu de l'événement : </label><input type='text' name='lieu' id="lieu"> </br>
+						<label for="lieu">&nbsp;&nbsp;Lieu de l'événement : </label><input type='text' name='lieu' id="lieu"> </br>
 					
 					
-						<label for="nom">Nom de l'événement </label><input type='text' name='libelle' id="nom"> </br>
+						<label for="nom">&nbsp;Nom de l'événement : </label><input type='text' name='libelle' id="nom"> </br>
 					
 					
-						<label for="laDate">date de l'événement </label><input type='date' name='dateEV' id="laDate"> </br>
+						<label for="laDate">Date de l'événement : </label><input type='date' name='dateEV' id="laDate"> </br>
 					
 										
-						<label for="leSelect">Type d'événement</label>
+						<label for="leSelect">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type d'événement : </label>
 						<SELECT id="leSelect" name="uneTable" size="1" onChange="THEFUNCTION(this.selectedIndex);">
-							<option value ='choix'>choix</option>
-							<option value ='interieur'>intérieur</option>
-							<option value ='exterieur'>extérieur</option>
+							<option value ='choix'>Choix : </option>
+							<option value ='interieur'>Intérieur</option>
+							<option value ='exterieur'>Extérieur</option>
 						</SELECT>		</br>
 					
 					<div style="display:none;" id="divSuperficie">

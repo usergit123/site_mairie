@@ -1,7 +1,11 @@
 <br>
  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 				<div class="container">
+<<<<<<< HEAD
+						<a class="navbar-brand text-blue" href="index.php"> Bienvenue </a>
+=======
 						<a class="navbar-brand text-blue" href="index.php">Bienvenue dans votre mairie</a>
+>>>>>>> 9619a1a0ac57e8b46200d1daa45769c109dfece1
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 								<span class="navbar-toggler-icon"></span>
 						</button>
