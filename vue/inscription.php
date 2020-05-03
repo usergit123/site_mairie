@@ -13,50 +13,117 @@
       	<bR>
 
 
-      	<div class="container">
+      	
 
-      	    <div class="row">
-      	        <div class="col-md-4 offset-md-4">
-      	        <div class="card text-center card  bg-default mb-3">
-      	          <div class="card-header">
-      	            Inscrivez-vous
-      	          </div>
-      	          <div class="card-body">
+      	    
+      	        
+      	        
+      	          
+      	            <H3><strong>Inscrivez-vous</strong></H3>
+					<br><br>
+      	          
+      	          
       				<form method="post" action="">
-			<input type="text" name="pseudo" class="form-control input-sm chat-input" placeholder="pseudo" />
-			</br>
-			<input type="text" name="mdp" class="form-control input-sm chat-input" placeholder="mdp" />
-			</br>
-			<input type="text" name="nom" class="form-control input-sm chat-input" placeholder="nom" />
-			</br>
-            <input type="text" name="prenom" class="form-control input-sm chat-input" placeholder="prenom" />
-			</br>
-			<input type="text" name="adresse" class="form-control input-sm chat-input" placeholder="adresse" />
-			</br>
-      		<input type="text" name="tel" class="form-control input-sm chat-input" placeholder="tel" />
-      		</br>
-            <input type="text" name="cp" class="form-control input-sm chat-input" placeholder="code postal" />
-            </br>
-			<input type="text" name="email" class="form-control input-sm chat-input" placeholder="email" />
-            </br>
-			<input type="date" name="datenaiss" class="form-control input-sm chat-input" placeholder="datenaiss" />
-            </br>
-			<input type="text" name="sexe" class="form-control input-sm chat-input" placeholder="sexe" />
-            </br>
-			<input type="text" name="fonction" class="form-control input-sm chat-input" placeholder="fonction" />
+			<table>
+			
+			<tr>
+				<td><strong>Pseudo:</strong></td>
+				<td>
+				<input type="text" name="pseudo" placeholder="pseudo" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>MDP:</strong></td>
+				<td>
+				<input type="text" name="mdp" placeholder="mdp" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>Nom:</strong></td>
+				<td>
+				<input type="text" name="nom" placeholder="nom" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>Prenom:</strong></td>
+				<td>
+				<input type="text" name="prenom" placeholder="prenom" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>Adresse:</strong></td>
+				<td>
+				<input type="text" name="adresse" placeholder="adresse" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>Tel:</strong></td>
+				<td>
+				<input type="text" name="tel" placeholder="tel" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>Code Postal:</strong></td>
+				<td>
+				<input type="text" name="cp" placeholder="code postal" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>Email:</strong></td>
+				<td>
+				<input type="text" name="email" placeholder="email" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>Date de naissance: </strong>&nbsp; </td>
+				<td>
+				<input type="date" name="datenaiss" placeholder="datenaiss" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><strong>Fonction:	</strong></td>
+				<td>
+				<input type="text" name="fonction" placeholder="fonction" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><Strong>sexe: </strong></td>
+				<td>
+				 Homme<input type="radio" name="sexe" value="homme" />
+				Femme<input type="radio" name="sexe" value="femme" />
+				</td>
+			</tr>
+			</table>
+			
+			
+			
+			
+			
+      		
+            
+            
+            
+            
             </br>
 
 
-      							<div class="card-footer text-muted">
-      							<input type ="reset" name ="annuler" value ="Annuler" class="btn btn-secondary">
-      							<input type ="submit" name ="valider" value="S'inscrire" class="btn btn-secondary">
+      							
+      							<input type ="reset" name ="annuler" value ="Annuler" >
+      							<input type ="submit" name ="valider" value="S'inscrire" >
 
-      						</div>
+      						
       					</form>
-      	        </div>
-      	    </div>
-      	    </div>
-      	</div>
+      	      
 		
 		<?php
 

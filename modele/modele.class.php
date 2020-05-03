@@ -91,7 +91,7 @@
 				{
 					$tabValues[] = ":".$cle;
 					$donnees[":".$cle] = $valeur;
-					//echo $valeur;
+					echo $valeur;
 				}
 				$chaineTab = implode (", ", $tabValues);
 				
