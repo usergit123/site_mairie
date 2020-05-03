@@ -10,10 +10,10 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="index.php?page=1">Cantines</a></li>
-          <li><a href="index.php?page=4">Association</a></li>
-          <li><a href="index.php?page=2">Loisir</a></li>
-          <li><a href="index.php?page=3">Evenement</a></li>
+          <li class="active"><a href="index.php?HS=1">Cantines</a></li>
+          <li><a href="index.php?HS=4">Association</a></li>
+          <li><a href="index.php?HS=2">Loisir</a></li>
+          <li><a href="index.php?HS=3">Evenement</a></li>
 		  <li><a href="index.php?page=5">Acte de Mariage</a></li>
 		  <li><a href="index.php?page=7">Acte des enfants</a></li>
 		  <li><a href="index.php?page=10">Déconnexion</a></li>

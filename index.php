@@ -62,7 +62,94 @@
 				} 
 			}
 	
-	if($_SESSION==null)
+	if(isset($_GET['HS']))
+	{
+		switch ($_GET['HS'])
+				{
+					case 1 :
+						include ("vue/recherche.php");
+						$unControleur->setTable("cantine");
+						$lesLignes = $unControleur->selectALL();
+						//var_dump($lesLignes);
+						if(isset($_POST['valider']))
+						{
+							//$recherche = $_POST['recherche'];
+							
+							$champs = array("*"); 
+							//var_dump($champs);
+							$where = array("ville"=>$_POST['recherche'],"codePostal"=>$_POST['recherche'],"prix"=>$_POST['recherche']); 
+							$operateur = " or "; 					
+							$lesLignes = $unControleur->selectWhere($champs,$where,$operateur);
+							
+							
+						}
+						include("vue/tableau_cantine.php");
+						break;
+					
+					case 2:
+						//si la personne a cliquée sur "s'insrire"
+						if(isset($_GET['num']))
+						{							
+							$unControleur->setTable("Participer");	
+							$where = array("idL"=>"".$_GET['num']."","idP"=>"".$_SESSION['idP']."","datePL"=>"curdate()");  
+							//var_dump($champs);
+							$unControleur->insert_participer($where);
+							echo "<br><br>Vous avez bien été inscrit !";
+						}
+						include ("vue/recherche.php");
+						$unControleur->setTable("loisir");					
+						$lesLignes = $unControleur->selectALL();
+						if(isset($_POST['valider']))
+						{
+							//$recherche = $_POST['recherche'];
+							
+							$champs = array("*"); 
+							//var_dump($champs);
+							$where = array("idL"=>$_POST['recherche'],"libelle"=>$_POST['recherche'],"lieu"=>$_POST['recherche']); 
+							$operateur = " or "; 					
+							$lesLignes = $unControleur->selectWhere($champs,$where,$operateur);
+							
+							
+						}
+						include("vue/tableau_loisir.php");
+						//var_dump($lesLignes);
+						break;
+					
+					case 3:
+						include ("vue/recherche.php");
+						/*
+						$unControleur->setTable("evenement");
+						$lesLignes = $unControleur->selectALL();
+						*/
+						include("vue/tableau_evenement.php");
+						//var_dump($lesLignes);
+						break;
+					
+					case 4:
+						include("vue/recherche.php");
+						$unControleur->setTable("association");
+						$lesLignes = $unControleur->selectALL();
+						if(isset($_POST['valider']))
+						{
+							//$recherche = $_POST['recherche'];
+							
+							$champs = array("*"); 
+							//var_dump($champs);
+							$where = array("libelleA"=>$_POST['recherche'],"adresse"=>$_POST['recherche'],"tel"=>$_POST['recherche'],
+											"codeP"=>$_POST['recherche'],"dateA"=>$_POST['recherche']); 
+							$operateur = " or "; 					
+							$lesLignes = $unControleur->selectWhere($champs,$where,$operateur);
+						}
+						include("vue/tableau_association.php");
+						break;
+					case 5:
+						include ("vue/form_connexion.php");
+						include("vue/connexion.php");
+						break;
+				}
+	}
+	
+	if($_SESSION==null && $_GET==null)
 	{
 		echo "</br></br><strong>Bienvenue sur le site de la mairie de Villiers<strong>";
 		include ("vue/form_connexion.php");
