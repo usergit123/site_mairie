@@ -1,10 +1,18 @@
 
 					<center>
 					<h3> Voici les loisirs </h3>
-					<table class="unTypeDeTableau">
-					<tr><th>Id Loisir </th> <th>Libelle</th>
-					<th> Lieu</th> </tr>
-					
+					<div class="table-responsive" id="sailorTableArea">
+<table id="sailorTable" class="table table-striped table-bordered" width="25%">
+
+<thead>
+					<tr>
+						<th>Id Loisir </th> 
+						<th>Libelle</th>
+						<th> Lieu</th> 
+						<th> Inscrivez-vous ici</th> 
+					</tr>
+</thead>
+<tbody>
 					
 					<?php
 						$num=0;
@@ -19,6 +27,7 @@
 						echo "</table>";
 						//echo "</br></br><a href='inscriptionLoisir.php'> s'inscrire à une activité </a>";
 					?>
+</tbody>
 					
 					</table>
 					</center>

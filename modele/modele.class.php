@@ -91,6 +91,7 @@
 				{
 					$tabValues[] = ":".$cle;
 					$donnees[":".$cle] = $valeur;
+					//echo $valeur;
 				}
 				$chaineTab = implode (", ", $tabValues);
 				
@@ -205,6 +206,27 @@
 			}
 			else
 			{
+				return null;
+			}
+		}
+		
+		public function verif_pseudo ($login)
+		{
+			if ($this->pdo !=null)
+			{
+				$requete="SELECT pseudo FROM personne WHERE pseudo = '".$login."'; ";
+				
+				
+				
+				//preparation de la requete
+				$select = $this->pdo->prepare ($requete);
+				//execution de la requete
+				$select->execute ();
+				//extraction des enregistrements
+				return $select->fetchALL();
+			}
+			else
+			{	
 				return null;
 			}
 		}

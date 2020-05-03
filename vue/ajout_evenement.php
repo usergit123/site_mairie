@@ -1,7 +1,7 @@
 
 
 					
-					<h1> Ajouter un évènement </h1> </br>
+					<h1> Ajouter un événement </h1> </br>
                     <form method ="post" action ="">
 					
 						<label for="lieu">Lieu de l'événement : </label><input type='text' name='lieu' id="lieu"> </br>

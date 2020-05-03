@@ -19,10 +19,19 @@
 <center>
 <table>
 <tr><td style="vertical-align:top;">
-<table border=1>
+<div class="table-responsive" id="sailorTableArea">
+<table id="sailorTable" class="table table-striped table-bordered" width="25%">
 <h3> Événements intérieurs </h3>
-					<tr><td>Lieu </td> <td>Libelle</td> <td>Date</td> <td>Superficie</td>
-					
+
+<thead>
+				<tr>
+					<th>Libelle </th> 
+					<th>Lieu</th> 
+					<th>Date</th> 
+					<th>Superficie</th>
+				</tr>
+</thead>
+<tbody>					
 					<?php
 					foreach ($lesLignes as $uneLigne)
 					{
@@ -33,7 +42,7 @@
 						</tr>";
 					}
 					?>
-					
+</tbody>			
 					</table>
 </td>
 
@@ -58,10 +67,19 @@
 	}
 ?>
 
-<table border=1>
+<div class="table-responsive" id="sailorTableArea">
+<table id="sailorTable" class="table table-striped table-bordered" width="25%">
 <h3> Événements extérieur </h3>
-					<tr><td>Lieu </td> <td>Libelle</td> <td>Date</td> <td>Météo</td>
-					
+
+<thead>
+				<tr>
+					<th>Libelle </th> 
+					<th>Lieu</th> 
+					<th>Date</th> 
+					<th>Météo</th>
+				<tr>
+</thead>
+<tbody>					
 					<?php
 					foreach ($lesLignes as $uneLigne)
 					{
@@ -72,7 +90,7 @@
 						</tr>";
 					}
 					?>
-					
+</tbody>					
 					</table>
 </td>
 </tr>

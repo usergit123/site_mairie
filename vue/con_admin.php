@@ -31,6 +31,8 @@ if (isset($_POST['SeConnecter']))
 						$int='prenom';
 						//echo strlen((string)$int); 
 					}
+					
+					header('Location: connexion_admin.php');
 				
 			}
 		}

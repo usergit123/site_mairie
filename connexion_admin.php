@@ -64,28 +64,20 @@
   ?>
           
             <img src="img/mairie15.png" width="100%"height="10%" >
-			<center>
-			<h1> SITE DE LA MAIRIE </h1>
-		    <form method ="post" action ="">
-		    Pseudo : <input type ="text" name="pseudo"> </br> 
-		    MDP : <input type ="password" name="mdp"> </br> 
-		    <input type ="reset" name ="Annuler" value ="Annuler">
-		    <input type ="submit" name ="SeConnecter" value ="SeConnecter"><br/>
-		    </form>
-			</center>
 			
-			<center>
-		    <a href="inscription.php"> Inscrivez-vous ici </a>
 <center>
 <?php
-	
-	include("vue/con_admin.php");
+	if(!isset($_SESSION['numA']))
+	{
+		include("vue/form_con_admin.php");
+		include("vue/con_admin.php");		
+	}
 	
 	//echo $_SESSION['numA']."<br><br><br>";
 	
 	if (isset($_SESSION['numA']))
 		{
-				include ("vue/pages_admin.php");
+				
 
 				if (isset($_GET['page']))
 				{
@@ -128,8 +120,24 @@
 					
 					case 3:
 						
+						echo "
+						<table>
+							<tr>
+								<td style='vertical-align:top;'>";
+								include('vue/ajout_evenement.php');
+								
+								echo
+								"</td> <td width='100px'>
+								
+								<td style='vertical-align:top;'>";
+								include('vue/supprimer_evenement.php');
+								echo "</td>
+							</tr>
+						</table>";
 						
-						include("vue/ajout_evenement.php");
+						
+						
+						
 						if(isset($_POST['ajouter']))
 						{
 							$unControleur->setTable($_POST["uneTable"]);	
@@ -145,7 +153,6 @@
 							 echo "l'événement a bien été ajouté";
 						}
 										
-						include("vue/supprimer_evenement.php");
 						if(isset($_POST['supprimer']))
 						{
 							$unControleur->setTable("evenement");

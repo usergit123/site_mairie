@@ -23,7 +23,7 @@
 							<td>".$uneLigne['prix']."</td><tr>";
 						}
 					?>
-									</tbody>
+</tbody>
 									</table>
 									</div>
 									</center>

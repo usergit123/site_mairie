@@ -1,4 +1,5 @@
-<center>
+
+			<center>
 <h1> Veuillez vous connecter </h1>
 
 <form method ="post" action ="">
@@ -14,7 +15,8 @@
 <input type ="reset" name ="Annuler" value ="Annuler">
 <input type ="submit" name ="SeConnecter" value ="SeConnecter"><br/>
 </form>
-<a href="index.php?HS=6"> Inscrivez-vous ici </a>
+
 </center>
  </br> 
   </br> 
+		

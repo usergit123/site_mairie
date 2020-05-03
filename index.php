@@ -51,6 +51,7 @@
           
             <img src="img/mairie15.png" width="100%"height="10%" >
 <center>
+<br>
 <?php
 	
 	
@@ -62,6 +63,7 @@
 				} 
 			}
 	
+	//les pages visitables hors connexion
 	if(isset($_GET['HS']))
 	{
 		switch ($_GET['HS'])
@@ -142,11 +144,19 @@
 						}
 						include("vue/tableau_association.php");
 						break;
+						
+						
 					case 5:
 						include ("vue/form_connexion.php");
 						include("vue/connexion.php");
 						break;
+
+					case 6:
+						include("vue/inscription.php");
+						break;
+						
 				}
+				
 	}
 	
 	if($_SESSION==null && $_GET==null)

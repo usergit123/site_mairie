@@ -56,5 +56,10 @@
 			return $this->unModele->selectUser($pseudo,$mdp);
 		}
 		
+		public function verif_pseudo ($login)
+		{
+			return $this->unModele->verif_pseudo($login);
+		}
+		
     }
 ?>
