@@ -232,32 +232,32 @@ before insert on interieur
 for each row
 begin
 
-declare x, y, z int;
+	declare x, y, z int;
 
-set new.idEV = ifnull(new.idEV,1);
+	set new.idEV = ifnull(new.idEV,1);
 
-select max(idEV) into x
-from interieur;
-if x =0 
-then 
-	set new.idEV=x+1;
-end if ;
-if x>=new.idEV
-then
-	set new.idEV=x+1;
-end if ;
-select count(*) into y from evenement where idEV = new.idEV ;
-if y = 0
-then
-	insert into evenement values (new.idEV, new.lieu, new.libelle, new.dateEV);
-end if ;
+	select max(idEV) into x
+	from interieur;
+	if x =0 
+	then 
+		set new.idEV=x+1;
+	end if ;
+	if x>=new.idEV
+	then
+		set new.idEV=x+1;
+	end if ;
+	select count(*) into y from evenement where idEV = new.idEV ;
+	if y = 0
+	then
+		insert into evenement values (new.idEV, new.lieu, new.libelle, new.dateEV);
+	end if ;
 
-if y > 0
-then
-	select max(idEV) into z from evenement;
-	set new.idEV = z + 1;
-	insert into evenement values (new.idEV, new.lieu, new.libelle, new.dateEV);
-end if ;
+	if y > 0
+	then
+		select max(idEV) into z from evenement;
+		set new.idEV = z + 1;
+		insert into evenement values (new.idEV, new.lieu, new.libelle, new.dateEV);
+	end if ;
 end //
 delimiter ;
 
@@ -272,33 +272,33 @@ before insert on exterieur
 for each row
 begin
 
-declare x, y, z int;
+	declare x, y, z int;
 
-set new.idEV = ifnull(new.idEV,1);
+	set new.idEV = ifnull(new.idEV,1);
 
-select max(idEV) into x
-from exterieur;
-if x =0 
-then 
-	set new.idEV=x+1;
-end if ;
-if x>=new.idEV
-then
-	set new.idEV=x+1;
-end if ;
-select count(*) into y from evenement where idEV = new.idEV ;
-if y = 0
-then
-	insert into evenement values (new.idEV, new.lieu, new.libelle, new.dateEV);
-end if ;
+	select max(idEV) into x
+	from exterieur;
+	if x =0 
+	then 
+		set new.idEV=x+1;
+	end if ;
+	if x>=new.idEV
+	then
+		set new.idEV=x+1;
+	end if ;
+	select count(*) into y from evenement where idEV = new.idEV ;
+	if y = 0
+	then
+		insert into evenement values (new.idEV, new.lieu, new.libelle, new.dateEV);
+	end if ;
 
 
-if y > 0
-then
-	select max(idEV) into z from evenement;
-	set new.idEV = z + 1;
-	insert into evenement values (new.idEV, new.lieu, new.libelle, new.dateEV);
-end if ;
+	if y > 0
+	then
+		select max(idEV) into z from evenement;
+		set new.idEV = z + 1;
+		insert into evenement values (new.idEV, new.lieu, new.libelle, new.dateEV);
+	end if ;
 end //
 delimiter ;
 
@@ -340,21 +340,33 @@ create trigger priveeBeforeInsert
 before insert on privee
 for each row
 begin
+	
+	declare x, y, z int;
 
-declare x int;
+	set new.idC = ifnull(new.idC,1);
 
-select count(*) into x from cantine;
+	select max(idC) into x
+	from privee;
+	if x =0 
+	then 
+		set new.idC=x+1;
+	end if ;
+	if x>=new.idC
+	then
+		set new.idC=x+1;
+	end if ;
+	select count(*) into y from cantine where idC = new.idC ;
+	if y = 0
+	then
+		insert into cantine values (new.idC, new.ville, new.codePostal, new.prix);
+	end if ;
 
-if x = 0
-then
-	set new.idC = x + 1;
-	insert into cantine values (new.idC, new.ville, new.codePostal, new.prix);
-end if ;
-if x >= new.idC
-then
-	set new.idC = x + 1;
-	insert into cantine values (new.idC, new.ville, new.codePostal, new.prix);
-end if ;
+	if y > 0
+	then
+		select max(idC) into z from cantine;
+		set new.idC = z + 1;
+		insert into cantine values (new.idC, new.ville, new.codePostal, new.prix);
+	end if ;
 
 end //
 
@@ -388,21 +400,34 @@ create trigger publiqueBeforeInsert
 before insert on publique
 for each row
 begin
+	
+	declare x, y, z int;
 
-declare x int;
+	set new.idC = ifnull(new.idC,1);
 
-select count(*) into x from cantine;
+	select max(idC) into x
+	from publique;
+	if x =0 
+	then 
+		set new.idC=x+1;
+	end if ;
+	if x>=new.idC
+	then
+		set new.idC=x+1;
+	end if ;
+	select count(*) into y from cantine where idC = new.idC ;
+	if y = 0
+	then
+		insert into cantine values (new.idC, new.ville, new.codePostal, new.prix);
+	end if ;
 
-if x = 0
-then
-	set new.idC = x + 1;
-	insert into cantine values (new.idC, new.ville, new.codePostal, new.prix);
-end if ;
-if x >= new.idC
-then
-	set new.idC = x + 1;
-	insert into cantine values (new.idC, new.ville, new.codePostal, new.prix);
-end if ;
+	if y > 0
+	then
+		select max(idC) into z from cantine;
+		set new.idC = z + 1;
+		insert into cantine values (new.idC, new.ville, new.codePostal, new.prix);
+	end if ;
+	
 
 end //
 
@@ -449,10 +474,10 @@ delimiter ;
 
 
 insert into privee values 
-(0, 'quincy', 80200, 17, "Oui"),
-(0, 'brunoy', 91500, 20, "Non");
+(null, 'quincy', 80200, 17, "Oui"),
+(null, 'brunoy', 91500, 20, "Non");
 insert into publique values
-(0, 'montgeron', 77300, 30, 20);
+(null, 'montgeron', 77300, 30, 20);
 
 /* faire un trigger sur les dates */
 
