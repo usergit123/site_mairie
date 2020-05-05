@@ -33,7 +33,7 @@ lieu varchar(50),
 primary key(idL)
 );
 create table personne
-(idP int(3) not null auto_increment,
+(idP int(3) auto_increment,
 pseudo varchar(20) unique,
 mdp varchar(50),
 nom varchar(20),
@@ -178,7 +178,9 @@ insert into loisir values(null, "concert", "Quincy");
 
 INSERT INTO personne (idP,pseudo,mdp,nom,prenom,adresse,Tel,cp,email,datenaiss,sexe,fonction) 
 VALUES (null,"kev", 123,"Henry","Kevin", "28 rue delacarte","0102030405",75000,"kevin@henry.fr","1996/01/04","homme","PDG"),
-	   (null,"aud", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave");
+	   (null,"aud", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave"),
+	   (null,"aud2", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave"),
+	   (null,"aud3", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave");
 
 insert into assister values
 (1,1,"2021/02/02"),

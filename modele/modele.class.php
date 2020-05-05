@@ -146,6 +146,8 @@
 				
 				$requete = "delete from ".$this->table." where ".$chaine.";";
 				
+				echo $requete;
+				
 				$select = $this->pdo->prepare ($requete);
 				//execution de la requete avec les donnees des variables PDO
 				$select->execute ($donnees);

@@ -9,10 +9,12 @@
 						<td>
 							<SELECT name="idC" size="1">
 							<?php
-							$connexion = mysqli_connect("localhost","root","","mairie");
-							$requete="select * from cantine;";
-							$resultats=mysqli_query($connexion,$requete);
-							while ($ligne = mysqli_fetch_assoc($resultats))
+							$unControleur->setTable("cantine");
+							$resultats = $unControleur->selectALL();
+							
+							
+							
+							foreach ($resultats as $ligne)
 									{
 										echo"<option value ='".$ligne["idC"]."'>".$ligne["ville"]."</option>";
 									}	 
