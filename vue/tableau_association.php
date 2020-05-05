@@ -7,10 +7,11 @@
 					
 <thead>					
 			<tr>	
-					 <th> Nom </th>
-					 <th> adresse </th> 
-					 <th> tel </th>
-					 <th> code postal </th> 
+					 <th> Nom : </th>
+					 <th> Adresse :</th> 
+					 <th> Téléphone : </th>
+					 <th> Code postal :</th>
+					 <th> Date : </th> 
 			</tr>
 </thead>
 <tbody>
@@ -21,6 +22,7 @@
 						<td> ".$uneLigne['adresse']." </td>
 						<td>".$uneLigne['tel']." </td>
 						<td>".$uneLigne['codeP']." </td>
+						<td>".$uneLigne['dateA']."</td>
 						</tr>";
 					}
 					?>

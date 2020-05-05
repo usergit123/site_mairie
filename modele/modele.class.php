@@ -105,6 +105,30 @@
 			}
 		}
 		
+		public function insertMariage($tab)
+		{
+			if ($this->pdo !=null) //appel de la fonction connexion
+			{
+				$donnees = array();
+				$tabValues = array();
+				foreach ($tab as $cle=>$valeur)
+				{
+					$tabValues[] = ":".$cle;
+					$donnees[":".$cle] = $valeur;
+					echo $valeur;
+				}
+				$chaineTab = implode (", ", $tabValues);
+				
+				$requete = "insert into ".$this->table." (idP1,idP2,dateMariage) values (".$chaineTab.");";
+				
+				echo $requete;
+				
+				$select = $this->pdo->prepare ($requete);
+				//execution de la requete
+				$select->execute ($donnees);
+			}
+		}
+
 		public function insert_participer ($tab)
 		{
 			//var_dump($tab);

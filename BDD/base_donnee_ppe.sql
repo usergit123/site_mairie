@@ -173,6 +173,9 @@ create table archiveAssister as select*from assister where 2=0;
 create table archiveMariage as select*from mariage where 2=0;        
 create table archiveAsso as select*from association where 2=0; 
 
+insert into personne values (3, "dan", "123", "Halle","Danaele","3 rue de la ruse","0125457885","45825",
+	"dana@halle.fr","2000-12-13","femme","Beaute"),
+(4, "nad", "123", "ela","istru","4 rue de la mort","0125123654","45458","istru@laposte.fr","2000-12-13","homme","canon");
 
 insert into loisir values(null, "concert", "Quincy");
 

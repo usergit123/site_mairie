@@ -26,7 +26,13 @@
     						if( $_GET['page']==3  && (isset($_POST['ajouter']) || isset($_POST['supprimer']))  )
     							header('Location: connexion_admin.php?page=3');
     					}
+
+    							
     				}
+    					
+    				 if( $_GET['page']==4  && (isset($_POST['ajouter']) || isset($_POST['supprimer']))  )
+    							header('Location: connexion_admin.php?page=4');
+    				
 				}
 		?>
   
@@ -106,7 +112,7 @@
 						
 						
 						
-						if(isset($_POST['Ajouter']))
+						if(isset($_POST['ajouter']))
 						{
 							$unControleur->setTable($_POST["uneTable"]);	
 							if ($_POST["uneTable"] == "publique")
@@ -200,12 +206,42 @@
 					case 4:
 						$unControleur->setTable("association");
 						$lesLignes = $unControleur->selectALL();
+						include("vue/ajout_association.php");
+						if(isset($_POST['ajouter']))
+						{
+							 $tab = array("libelleA"=>$_POST['libelleA'],"adresse"=>$_POST['adresse'],"tel"=>$_POST['tel'],"codeP"=>$_POST['codeP'],"dateA"=>$_POST['dateA']);
+							 $unControleur->insert($tab);
+							 echo "L'association a bien été ajouté";
+						}
+						
+						if(isset($_POST['supprimer']))
+						{
+							 $tab = array("idA"=>$_POST['idA']);
+							 $unControleur->delete($tab);
+						}
+						include("vue/supprimer_association.php");
 						include("vue/tableau_association.php");
 						break;
 					
 					case 5:
+						$unControleur->setTable("mariage");
 						$lesLignes = $unControleur->afficher_mariage_admin();
 						include ("vue/tableau_mariage.php");
+						include("vue/ajout_mariage.php");
+						if(isset($_POST['ajouter']))
+						{
+							 $tab = array("idP1"=>$_POST['idP1'],"idP2"=>$_POST['idP2'],"dateMariage"=>$_POST['dateMariage']);
+							 $unControleur->insertMariage($tab);
+							 echo "Le mariage a bien été ajouté";
+						}
+						
+						if(isset($_POST['supprimer']))
+						{
+							 $tab = array("idP1"=>$_POST['idP1'],"idP2"=>$_POST['idP2']);
+							 $unControleur->delete($tab);
+						}
+						include("vue/supprimer_association.php");
+						
 						break;
 					
 					case 6:
