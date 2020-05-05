@@ -33,7 +33,7 @@
 					</div>
 					
                     <input type ="reset" name ="Annuler" value ="Annuler">
-                    <input type ="submit" name ="Ajouter" value ="Ajouter"><br/>
+                    <input type ="submit" name ="ajouter" value ="ajouter"><br/>
                     </form>
 					</br></br>
 					
