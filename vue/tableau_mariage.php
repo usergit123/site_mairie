@@ -1,10 +1,13 @@
 					<center>
 					<h2> Voici les mariages </h2> 
 					
-					<table border=1>
-					<tr><td> 1er marié(e) </td>
-					 <td> 2ème marié(e)</td>
-					 <td> date</td>
+					<div class="table-responsive" id="sailorTableArea">
+<table id="sailorTable" class="table table-striped table-bordered" width="25%">
+					
+					
+					<tr><th> 1er marié(e) </th>
+					 <th> 2ème marié(e)</th>
+					 <th> date</th>
 					 
 					 <?php
 					foreach ($lesLignes as $uneLigne)

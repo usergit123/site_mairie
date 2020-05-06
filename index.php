@@ -125,6 +125,8 @@
 						*/
 						include("vue/tableau_evenement.php");
 						//var_dump($lesLignes);
+						include("vue/inscription_evenement.php");
+						
 						break;
 					
 					case 4:

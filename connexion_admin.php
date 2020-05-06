@@ -237,10 +237,10 @@
 						
 						if(isset($_POST['supprimer']))
 						{
-							 $tab = array("idP1"=>$_POST['idP1'],"idP2"=>$_POST['idP2']);
+							 $tab = array("idP1"=>$_POST['idP1']);
 							 $unControleur->delete($tab);
 						}
-						include("vue/supprimer_association.php");
+						include("vue/supprimer_mariage.php");
 						
 						break;
 					
@@ -255,6 +255,13 @@
 						$lesLignes = $unControleur->selectALL();
 					
 						include("vue/tableau_enfants.php");
+						include("vue/ajouter_enfant.php");
+						if(isset($_POST['ajouter']))
+						{
+							$tab = array("idP"=>$_POST['idP'],"nomE"=>$_POST['nomE'],"prenomE"=>$_POST['prenomE'],"sexe"=>$_POST['sexe']);
+							 $unControleur->insertEnfant($tab);
+							 echo "le loisir a bien été ajouté";
+						}
 						break;
 					
 					case 8:

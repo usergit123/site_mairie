@@ -1,12 +1,16 @@
 					<center>
-					<h3>Vous avez:<h3>
-					<table border=1>
-					<tr><td> id enfant </td>
-					 <td> id parents </td>
-					 <td> id cantine </td>
-					 <td> Nom </td>
-					 <td> Prénom </td>
-					 <td> Sexe </td>
+					<h3>Voici vos enfants:<h3>
+					
+					<div class="table-responsive" id="sailorTableArea">
+<table id="sailorTable" class="table table-striped table-bordered" width="25%">
+					
+					
+					<tr><th> id enfant </th>
+					 <th> id parents </th>
+					 <th> id cantine </th>
+					 <th> Nom </th>
+					 <th> Prénom </th>
+					 <th> Sexe </th>
 					 <?php
 					foreach ($lesLignes as $uneLigne)
 					{

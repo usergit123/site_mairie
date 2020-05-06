@@ -105,6 +105,58 @@
 			}
 		}
 		
+		
+		public function insertAssister ($idP, $idEV)
+		{
+			if ($this->pdo !=null) //appel de la fonction connexion
+			{
+				/*$donnees = array();
+				$tabValues = array();
+				foreach ($tab as $cle=>$valeur)
+				{
+					$tabValues[] = ":".$cle;
+					$donnees[":".$cle] = $valeur;
+					echo $valeur;
+				}
+				$chaineTab = implode (", ", $tabValues);
+				*/
+				$requete = "insert into ".$this->table." values (".$idP.",".$idEV.",curdate());";
+				
+				echo $requete;
+				
+				$select = $this->pdo->prepare ($requete);
+				//execution de la requete
+				$select->execute() ;
+			}
+		}
+		
+		
+		public function insertEnfant ($tab)
+		{
+			if ($this->pdo !=null) //appel de la fonction connexion
+			{
+				$donnees = array();
+				$tabValues = array();
+				foreach ($tab as $cle=>$valeur)
+				{
+					$tabValues[] = ":".$cle;
+					$donnees[":".$cle] = $valeur;
+					echo $valeur;
+				}
+				$chaineTab = implode (", ", $tabValues);
+				
+				$requete = "insert into ".$this->table." (idE, idP, nomE, prenomE, sexe) values (null, ".$chaineTab.");";
+				
+				echo $requete;
+				
+				$select = $this->pdo->prepare ($requete);
+				//execution de la requete
+				$select->execute ($donnees);
+			}
+		}
+		
+		
+		
 		public function insertMariage($tab)
 		{
 			if ($this->pdo !=null) //appel de la fonction connexion

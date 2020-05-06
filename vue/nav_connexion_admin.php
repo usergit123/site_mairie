@@ -16,6 +16,7 @@
           <li><a href="connexion_admin.php?page=3">Evenement</a></li>
 		  <li><a href="connexion_admin.php?page=5">Acte de Mariage</a></li>
 		  <li><a href="connexion_admin.php?page=7">Acte des enfants</a></li>
+		  <li><a href="connexion_admin.php?page=8">Statistiques</a></li>
 		  <li><a href="connexion_admin.php?page=10">Déconnexion</a></li>
         </ul>
       </div>

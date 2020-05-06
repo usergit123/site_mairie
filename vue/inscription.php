@@ -149,7 +149,7 @@
 			
 			if(empty($pseudo2))
 			{
-				echo "y a rien";
+				//echo "y a rien";
 				$unControleur->setTable("personne");
 				
 				$tab = array("pseudo"=>$_POST['pseudo'],"mdp"=>$_POST['mdp'],"nom"=>$_POST['nom'],"prenom"=>$_POST['prenom'],
@@ -159,7 +159,7 @@
 				$unControleur->insert($tab);
 				echo "Votre inscription a bien été effectuée !";
 			}else{
-				echo "y a un truc";
+				echo "ce pseudo existe déjà !";
 			}
 
 			

@@ -68,5 +68,14 @@
 			return $this->unModele->verif_pseudo($login);
 		}
 		
+		public function insertEnfant ($tab)
+		{
+			return $this->unModele->insertEnfant($tab);
+		}
+		public function insertAssister($idP, $idEV)
+		{
+			return $this->unModele->insertAssister($idP, $idEV);
+		}
+		
     }
 ?>

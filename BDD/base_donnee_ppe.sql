@@ -3,14 +3,14 @@ create database Mairie;
 use Mairie;
 
 create table cantine
-(idC int(3) not null,
+(idC int(3),
 ville varchar(50),
 codePostal char(5),
 prix float,
 primary key(idC)
 );
 	create table privee
-	(idC int(3) not null,
+	(idC int(3),
 	ville varchar(50),
 	codePostal char(5),
 	prix float,
@@ -18,7 +18,7 @@ primary key(idC)
 	primary key(idC)
 	);
 	create table publique
-	(idC int(3) not null,
+	(idC int(3),
 	ville varchar(50),
 	codePostal char(5),
 	prix float,
@@ -88,10 +88,10 @@ primary key(idA)
 create table enfants
 (idE int(3) not null auto_increment,
 idP int(3) not null,
-idC int(3) not null,
+idC int(3),
 nomE varchar(20),
 prenomE varchar(20),
-sexe enum("fille","garçon"),
+sexe enum("fille","garcon"),
 primary key(idE),
 foreign key(idP) references personne(idP),
 foreign key(idC) references cantine(idC)
@@ -173,17 +173,14 @@ create table archiveAssister as select*from assister where 2=0;
 create table archiveMariage as select*from mariage where 2=0;        
 create table archiveAsso as select*from association where 2=0; 
 
-insert into personne values (3, "dan", "123", "Halle","Danaele","3 rue de la ruse","0125457885","45825",
-	"dana@halle.fr","2000-12-13","femme","Beaute"),
-(4, "nad", "123", "ela","istru","4 rue de la mort","0125123654","45458","istru@laposte.fr","2000-12-13","homme","canon");
 
 insert into loisir values(null, "concert", "Quincy");
 
 INSERT INTO personne (idP,pseudo,mdp,nom,prenom,adresse,Tel,cp,email,datenaiss,sexe,fonction) 
 VALUES (null,"kev", 123,"Henry","Kevin", "28 rue delacarte","0102030405",75000,"kevin@henry.fr","1996/01/04","homme","PDG"),
 	   (null,"aud", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave"),
-	   (null,"aud2", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave"),
-	   (null,"aud3", 42,"Puechmaille","Audran","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave");
+	   (null,"aud2", 42,"Zuber","Alexandre","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave"),
+	   (null,"aud3", 42,"Rezoug","Yanis	","perpete les oies","0504030201",7500,"audran@puecmaille.fr","1996/02/02","femme","esclave");
 
 insert into assister values
 (1,1,"2021/02/02"),
@@ -207,7 +204,7 @@ insert into association (idA,libelleA,adresse,tel,codeP, dateA) values
 
 insert into actes (idF, idP, mariage, naissance, deces) values (null, 1, '2018/09/01','1997/01/04',null);
 
-insert into enfants (idE, idP, idC, nomE, prenomE, sexe) values (null, 1, 1, 'ben', 'ocka', 'garçon');
+insert into enfants (idE, idP, idC, nomE, prenomE, sexe) values (null, 1, 1, 'ben', 'ocka', 'garcon');
 
 insert into admin values (1,'kevin',123);
 
@@ -327,10 +324,10 @@ delimiter ;
 
 
 insert into interieur values 
-(null,'bowling', 'bonneuil', '1996-12-12', 10),
-(null,'jouer','nice', '1997-11-11', 20 );
+(null,'bonneuil', 'bowling', '1996-12-12', 10),
+(null,'nice','jouer', '1997-11-11', 20 );
 insert into exterieur values
-(null, 'cinema', 'jura', '1998-10-10', 'bonne');
+(null, 'jura', 'cinema', '1998-10-10', 'bonne');
 
 
 
